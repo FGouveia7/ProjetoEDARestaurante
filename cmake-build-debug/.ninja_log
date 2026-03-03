@@ -1,0 +1,10 @@
+# ninja log v6
+27	977	7652520499955697	CMakeFiles/Projeto.dir/6balcao.cpp.obj	ca60f8092816ee37
+1048	1223	7652520510173689	Projeto.exe	aa9dbd442a8fb50c
+19	1030	7652520499879595	CMakeFiles/Projeto.dir/3cliente.cpp.obj	871bba3154f521d9
+23	987	7652520499920526	CMakeFiles/Projeto.dir/4fila.cpp.obj	b4ace7c4f1237f7f
+3	348	7653007848126245	build.ninja	2999a44f4b500d4a
+7	919	7652520499767543	CMakeFiles/Projeto.dir/1main.cpp.obj	50690c0970139ff4
+31	973	7652520500006698	CMakeFiles/Projeto.dir/7Menus.cpp.obj	4eba12fd3ca56ba
+13	1048	7652520499824966	CMakeFiles/Projeto.dir/5mesa.cpp.obj	fbff4a1184c75527
+39	1019	7652520500086858	CMakeFiles/Projeto.dir/8carregarEguardar.cpp.obj	b929e2f51f870b88
