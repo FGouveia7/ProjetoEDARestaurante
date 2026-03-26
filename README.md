@@ -1,50 +1,50 @@
-# Projeto — Simulação de Restaurante (CLI)
+# Project — Restaurant Simulation (CLI)
 
-Este repositório contém uma **simulação textual (CLI)** em **C++**, onde podes acompanhar e gerir o estado de um restaurante: **mesas**, **fila de entrada** e **balcão**. O programa imprime o estado inicial e permite avançar ciclos/ações através de menus no terminal.
+This repository contains a **text-based (CLI) simulation** in **C++**, where you can track and manage the state of a restaurant: **tables**, **entry queue**, and **counter/bar**. The program prints the initial state and lets you advance cycles/actions through terminal menus.
 
-O ponto de entrada do programa é `Main/1main.cpp` (função `main`), que inicializa `Balcao`, carrega nomes, cria as mesas e a fila inicial, e entra no loop de menus (`menu_s` / `menu_o`).
+The program’s entry point is `Main/1main.cpp` (the `main` function), which initializes `Balcao`, loads names, creates the tables and the initial queue, and then enters the menu loop (`menu_s` / `menu_o`).
 
-## Funcionalidades
+## Features
 
-- **Estado do restaurante**: impressão do estado atual (mesas, fila, balcão).
-- **Mesas**: criação e inicialização dinâmica de um número variável de mesas.
-- **Clientes e fila**: geração de clientes e gestão da fila de entrada.
-- **Balcão**: inicialização e gestão de clientes no balcão.
-- **Menus de interação**: opções no terminal para avançar (“Seguinte”) e aceder a operações (“Opções”).
+- **Restaurant state**: prints the current state (tables, queue, counter).
+- **Tables**: dynamic creation and initialization of a variable number of tables.
+- **Customers and queue**: customer generation and entry-queue management.
+- **Counter/bar**: initialization and management of customers at the counter.
+- **Interaction menus**: terminal options to advance (“Next”) and access operations (“Options”).
 
-## Tecnologias utilizadas
+## Tech stack
 
-- **C++20** (aplicação de consola)
+- **C++20** (console application)
 - **CMake** (build)
 
-## Requisitos
+## Requirements
 
-- **CMake 3.30+** (conforme `Main/CMakeLists.txt`)
-- **Compilador com suporte a C++20** (ex.: MSVC / MinGW / clang)
+- **CMake 3.30+** (per `Main/CMakeLists.txt`)
+- **A C++20-capable compiler** (e.g., MSVC / MinGW / clang)
 
-Para confirmar:
+To verify:
 
 ```bash
 cmake --version
 ```
 
-## Instalação
+## Installation
 
-1. **Clonar o repositório**:
+1. **Clone the repository**:
 
 ```bash
 git clone https://github.com/FGouveia7/ProjetoEDARestaurante
 ```
 
-2. **Entrar na pasta do projeto**:
+2. **Enter the project folder**:
 
 ```bash
-cd <folder onde tem o clone do repo>
+cd <folder-where-you-cloned-the-repo>
 ```
 
-## Compilar e executar (CMake)
+## Build and run (CMake)
 
-O `CMakeLists.txt` está em `Main/`, portanto os comandos abaixo usam esse diretório como source.
+The `CMakeLists.txt` is located in `Main/`, so the commands below use that directory as the source.
 
 ### Windows (PowerShell)
 
@@ -54,13 +54,13 @@ cmake --build .\build --config Debug
 .\build\Debug\Projeto.exe
 ```
 
-Se o teu gerador não criar a pasta `Debug\` (ex.: Ninja/MinGW), o executável pode ficar diretamente em `.\build\Projeto.exe`:
+If your generator does not create the `Debug\` folder (e.g., Ninja/MinGW), the executable may be directly at `.\build\Projeto.exe`:
 
 ```bash
 .\build\Projeto.exe
 ```
 
-### Linux/macOS (opcional)
+### Linux/macOS (optional)
 
 ```bash
 cmake -S ./Main -B ./build
@@ -68,46 +68,47 @@ cmake --build ./build
 ./build/Projeto
 ```
 
-## Utilização (no terminal)
+## Usage (in the terminal)
 
-Ao iniciar, o programa mostra:
+On startup, the program shows:
 
-- o **estado inicial do restaurante**
-- um prompt para escolher uma opção:
-  - **`s`**: Seguinte
-  - **`o`**: Opções
+- the **initial restaurant state**
+- a prompt to choose an option:
+  - **`s`**: Next
+  - **`o`**: Options
 
-Exemplo:
+Example:
 
 ```text
 Escolha uma opcao: (s) Seguinte, (o) Opcoes:
 ```
 
-## Estrutura do projeto
+## Project structure
 
-- `README.md`: este ficheiro
-- `Main/CMakeLists.txt`: build CMake (cria o executável `Projeto`)
-- `Main/1main.cpp`: ponto de entrada (loop principal e menus)
-- `Main/2estruturas.h`: structs principais (`cliente`, `Mesa`, `Balcao`)
-- `Main/3cliente.*`: lógica de clientes
-- `Main/4fila.*`: lógica de fila
-- `Main/5mesa.*`: lógica de mesas
-- `Main/6balcao.*`: lógica de balcão
-- `Main/7Menus.*`: menus/ações (interface de interação)
-- `Main/8carregarEguardar.*`: carregar/guardar (persistência)
+- `README.md`: this file
+- `Main/CMakeLists.txt`: CMake build file (creates the `Projeto` executable)
+- `Main/1main.cpp`: entry point (main loop and menus)
+- `Main/2estruturas.h`: main structs (`cliente`, `Mesa`, `Balcao`)
+- `Main/3cliente.*`: customer logic
+- `Main/4fila.*`: queue logic
+- `Main/5mesa.*`: table logic
+- `Main/6balcao.*`: counter logic
+- `Main/7Menus.*`: menus/actions (interaction interface)
+- `Main/8carregarEguardar.*`: load/save (persistence)
 
-## Problemas comuns
+## Common issues
 
-- **CMake não encontra compilador**: no Windows, instala “Desktop development with C++” (Visual Studio) ou configura MinGW/clang, e volta a correr `cmake -S ... -B ...`.
-- **Pasta `cmake-build-debug/` aparece no git status**: é uma pasta de build gerada pelo IDE/CMake e **não deve ser commitada**.
+- **CMake can’t find a compiler**: on Windows, install “Desktop development with C++” (Visual Studio) or configure MinGW/clang, then rerun `cmake -S ... -B ...`.
+- **`cmake-build-debug/` shows up in git status**: it’s a build folder generated by your IDE/CMake and generally **should not be committed**.
 
-## Contribuição
+## Contributing
 
-Sugestões e melhorias são bem-vindas:
+Suggestions and improvements are welcome:
 
-- abrir **issues** para bugs/ideias
-- criar **pull requests** com melhorias (ex.: novas opções de menu, regras de simulação, persistência)
+- open **issues** for bugs/ideas
+- create **pull requests** with improvements (e.g., new menu options, simulation rules, persistence)
 
-## Licença
+## License
 
-Projeto para fins educacionais. Sem licença específica definida.
+Educational project. No specific license defined.
+
